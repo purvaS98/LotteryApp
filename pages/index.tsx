@@ -5,7 +5,7 @@ import { NextPage } from "next";
 import { Box, Button, Container, Flex, Input, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import { HERO_IMAGE_URL, RAFFLE_CONTRACT_ADDRESS } from "../const/addresses";
 import { ethers } from "ethers";
-import RaffleStatus from "../components/rafflestatus";
+import RaffleStatus from "../components/raffleStatus";
 import { fontSize } from "@thirdweb-dev/react/dist/declarations/src/design-system";
 import { useState } from "react";
 
@@ -100,7 +100,7 @@ const Home: NextPage = () => {
               <Text fontSize={"xl"}>Connect your wallet to buy entries!</Text>
             )}
             {!isLoadingTotalEntries && (
-              <Text fontSize={"xl"}>Total Entries: {totalEntries.toString()}</Text>
+              <Text>Total Entries: {totalEntries.toString()}</Text>
             )}
           </Stack>
         </Flex>

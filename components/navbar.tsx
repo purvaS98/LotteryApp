@@ -11,9 +11,9 @@ export default function Navbar() {
     } = useContract(RAFFLE_CONTRACT_ADDRESS);
 
     const {
-        data: owner,
+        data: admin,
         isLoading: isLoadingOwner
-    } = useContractRead(contract, "owner");
+    } = useContractRead(contract, "admin");
 
     return (
         <Container maxW={"1440px"} py={8}>
@@ -22,7 +22,7 @@ export default function Navbar() {
                     <Text fontSize={"xl"} fontWeight={"bold"}>Raffle App</Text>
                 </Link>
                 <Flex flexDirection={"row"} alignItems={"center"}>
-                    {!isLoadingOwner && owner === address && (
+                    {!isLoadingOwner && address === admin && (
                         <Link href={"/admin"}>
                             <Text fontWeight={"bold"} mr={10}>Admin</Text>
                         </Link>
